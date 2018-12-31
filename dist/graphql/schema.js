@@ -5,6 +5,7 @@ const query_1 = require("./query");
 const mutation_1 = require("./mutation");
 const user_schema_1 = require("./resources/user/user.schema");
 const post_schema_1 = require("./resources/post/post.schema");
+const comment_schema_1 = require("./resources/comment/comment.schema");
 const SchemaDefinition = `
   type Schema {
     query: Query,
@@ -17,6 +18,7 @@ exports.default = graphql_tools_1.makeExecutableSchema({
         query_1.Query,
         mutation_1.Mutation,
         user_schema_1.userTypes,
-        post_schema_1.postTypes
+        post_schema_1.postTypes,
+        comment_schema_1.commentTypes
     ]
 });
