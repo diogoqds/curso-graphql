@@ -20,5 +20,5 @@ exports.default = graphql_tools_1.makeExecutableSchema({
         user_schema_1.userTypes,
         post_schema_1.postTypes,
         comment_schema_1.commentTypes
-    ]
+    ],
 });
