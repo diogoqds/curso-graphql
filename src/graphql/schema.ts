@@ -30,6 +30,14 @@ const typeDefs = `
 `;
 
 const resolvers = {
+  // Resolver trivial é o que retorna o atributo da sua entidade
+  // Geralmente não precisamos criar os resolvers triviais
+  User: {
+    id: (user) => user.id,
+    name: (user) => user.name,
+    // name: (user) => 'oi', nesse exemplo está sempre retornando a string 'oi'
+    email: (user) => user.email,
+  },
   Query: {
     allUsers: () => usersMock
   },
