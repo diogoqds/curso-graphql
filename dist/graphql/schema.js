@@ -23,10 +23,21 @@ const typeDefs = `
   type Query {
     allUsers: [ User! ]!
   }
+
+  type Mutation {
+    createUser(name: String!, email: String!): User!
+  }
 `;
 const resolvers = {
     Query: {
         allUsers: () => usersMock
+    },
+    Mutation: {
+        createUser: (parent, args) => {
+            const newUser = Object.assign({ id: usersMock.length + 1 }, args);
+            usersMock.push(newUser);
+            return newUser;
+        }
     }
 };
 exports.default = graphql_tools_1.makeExecutableSchema({ typeDefs, resolvers });
