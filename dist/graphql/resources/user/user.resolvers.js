@@ -48,7 +48,7 @@ const userResolvers = {
                 });
             });
         },
-        updateUserPassword: (parent, { id, input }, { db }, info) => {
+        updatePassword: (parent, { id, input }, { db }, info) => {
             id = parseInt(id, 10);
             return db.sequelize.transaction((t) => {
                 return db.User.findById(id)
@@ -76,3 +76,4 @@ const userResolvers = {
         },
     }
 };
+exports.userResolvers = userResolvers;

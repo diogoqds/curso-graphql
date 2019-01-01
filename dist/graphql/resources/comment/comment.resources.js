@@ -10,15 +10,13 @@ const commentResolvers = {
         },
     },
     Query: {
-        Comment: {
-            commentsByPost: (parent, { postId, first = 10, offset = 0 }, { db }, info) => {
-                return db.Comment
-                    .findAll({
-                    where: { post: postId },
-                    limit: first,
-                    offset: offset
-                });
-            }
+        commentsByPost: (parent, { postId, first = 10, offset = 0 }, { db }, info) => {
+            return db.Comment
+                .findAll({
+                where: { post: postId },
+                limit: first,
+                offset: offset
+            });
         }
     },
     Mutation: {
@@ -56,3 +54,4 @@ const commentResolvers = {
         }
     }
 };
+exports.commentResolvers = commentResolvers;

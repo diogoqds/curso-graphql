@@ -58,7 +58,7 @@ const userResolvers = {
       });
     },
 
-    updateUserPassword: (parent, { id, input }, { db }: { db: DbConnection }, info: GraphQLResolveInfo) => {
+    updatePassword: (parent, { id, input }, { db }: { db: DbConnection }, info: GraphQLResolveInfo) => {
       id = parseInt(id, 10);
       return db.sequelize.transaction((t: Transaction) => {
         return db.User.findById(id)
@@ -89,3 +89,5 @@ const userResolvers = {
     },
   }
 }
+
+export { userResolvers };

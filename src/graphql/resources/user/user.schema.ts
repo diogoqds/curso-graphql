@@ -6,7 +6,7 @@ const userTypes = `
     photo: String
     createdAt: String!
     updatedAt: String!
-    post(first: Int, offset: Int): [ Post! ]!
+    posts(first: Int, offset: Int): [ Post! ]!
   }
 
   input UserCreateInput {

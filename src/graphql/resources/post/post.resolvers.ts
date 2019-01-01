@@ -77,3 +77,5 @@ const postResolvers = {
     }
   }
 }
+
+export { postResolvers };

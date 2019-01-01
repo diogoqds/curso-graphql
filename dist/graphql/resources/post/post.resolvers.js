@@ -66,3 +66,4 @@ const postResolvers = {
         }
     }
 };
+exports.postResolvers = postResolvers;
